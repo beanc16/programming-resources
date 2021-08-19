@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/beanc16/programming-resources/static/css/main.a617e044.chunk.css",
+    "main.js": "/beanc16/programming-resources/static/js/main.388aafd4.chunk.js",
+    "main.js.map": "/beanc16/programming-resources/static/js/main.388aafd4.chunk.js.map",
+    "runtime-main.js": "/beanc16/programming-resources/static/js/runtime-main.4bbd430d.js",
+    "runtime-main.js.map": "/beanc16/programming-resources/static/js/runtime-main.4bbd430d.js.map",
+    "static/js/2.9e5fb4a9.chunk.js": "/beanc16/programming-resources/static/js/2.9e5fb4a9.chunk.js",
+    "static/js/2.9e5fb4a9.chunk.js.map": "/beanc16/programming-resources/static/js/2.9e5fb4a9.chunk.js.map",
+    "static/js/3.16560fe3.chunk.js": "/beanc16/programming-resources/static/js/3.16560fe3.chunk.js",
+    "static/js/3.16560fe3.chunk.js.map": "/beanc16/programming-resources/static/js/3.16560fe3.chunk.js.map",
+    "index.html": "/beanc16/programming-resources/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/beanc16/programming-resources/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.9e5fb4a9.chunk.js.LICENSE.txt": "/beanc16/programming-resources/static/js/2.9e5fb4a9.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/beanc16/programming-resources/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4bbd430d.js",
+    "static/js/2.9e5fb4a9.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.388aafd4.chunk.js"
+  ]
+}
