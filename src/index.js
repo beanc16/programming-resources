@@ -1,11 +1,22 @@
+// React
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+// Routing
 import {
   HashRouter
 } from "react-router-dom";
+
+// Testing
+import reportWebVitals from './reportWebVitals';
+
+// CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
+
+// App
+import App from './App';
+
 
 ReactDOM.render(
   <React.StrictMode>

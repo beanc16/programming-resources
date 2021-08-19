@@ -1,7 +1,7 @@
+// Routing
 import {
     Switch,
     Route,
-    Link,
     useRouteMatch
 } from "react-router-dom";
 
@@ -9,6 +9,9 @@ import {
 import PLHome from "./home/plHome";
 import HtmlAndCss from "./htmlAndCss/htmlAndCss";
 import JavaScript from "./javascript/javascript";
+
+// Components
+import { TabBar, TabBarItem } from "../../components/navigation/tabBar";
   
 
 function ProgrammingLanguages()
@@ -17,19 +20,17 @@ function ProgrammingLanguages()
 
     return(
         <div id="programming-languages">
-            <nav>
-                <ul>
-                    <li>
-                        <Link to={`${match.url}`}>Programming Languages Home</Link>
-                    </li>
-                    <li>
-                        <Link to={`${match.url}/html-css`}>HTML & CSS</Link>
-                    </li>
-                    <li>
-                        <Link to={`${match.url}/javascript`}>JavaScript</Link>
-                    </li>
-                </ul>
-            </nav>
+            <TabBar justify="center">
+                <TabBarItem to={`${match.url}`}>
+                    Programming Languages Home
+                </TabBarItem>
+                <TabBarItem to={`${match.url}/html-css`}>
+                    HTML & CSS
+                </TabBarItem>
+                <TabBarItem to={`${match.url}/javascript`}>
+                    JavaScript
+                </TabBarItem>
+            </TabBar>
             <Switch>
                 <Route path={`${match.path}/html-css`}>
                     <HtmlAndCss />

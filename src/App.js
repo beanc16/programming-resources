@@ -1,7 +1,7 @@
+// Routing
 import {
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 // Routes
@@ -11,30 +11,31 @@ import ProgrammingLanguages from "./routes/languages/programmingLanguages";
 import ProgrammingConcepts from "./routes/concepts/programmingConcepts";
 import TypesOfDevelopment from "./routes/dev-types/typesOfDevelopment";
 
+// Components
+import { TabBar, TabBarItem } from "./components/navigation/tabBar";
+
 
 function App()
 {
   return (
-    <div id="app">
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/universal">Universal Resources</Link>
-          </li>
-          <li>
-            <Link to="/languages">Programming Languages</Link>
-          </li>
-          <li>
-            <Link to="/concepts">Programming Concepts</Link>
-          </li>
-          <li>
-            <Link to="/dev-types">Types of Development</Link>
-          </li>
-        </ul>
-      </nav>
+    <div id="app" className="col-12 p-3 bg-dark bg-gradient text-white">
+      <TabBar justify="center">
+        <TabBarItem to="/" >
+          Home
+        </TabBarItem>
+        <TabBarItem to="/universal">
+          Universal Resources
+        </TabBarItem>
+        <TabBarItem to="/languages">
+          Programming Languages
+        </TabBarItem>
+        <TabBarItem to="/concepts">
+          Programming Concepts
+        </TabBarItem>
+        <TabBarItem to="/dev-types">
+          Types of Development
+        </TabBarItem>
+      </TabBar>
 
       <Switch>
         <Route path="/universal">
