@@ -17,7 +17,7 @@ function App()
   return (
     <div id="app">
       <nav>
-        <ul id="navigation">
+        <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
