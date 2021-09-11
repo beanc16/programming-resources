@@ -6,10 +6,10 @@ import {
 
 // Routes
 import Home from "./routes/home/home";
-import UniversalResources from "./routes/universal-resources/universalResources";
+import UniversalResources from "./routes/universalResources/universalResources";
 import ProgrammingLanguages from "./routes/languages/programmingLanguages";
 import ProgrammingConcepts from "./routes/concepts/programmingConcepts";
-import TypesOfDevelopment from "./routes/dev-types/typesOfDevelopment";
+import TypesOfDevelopment from "./routes/devTypes/typesOfDevelopment";
 
 // Components
 import { TabBar, TabBarItem } from "./components/navigation/tabBar";

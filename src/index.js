@@ -12,9 +12,9 @@ import reportWebVitals from './reportWebVitals';
 
 // CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
+import './css/index.css';
 
-// App
+// Components
 import App from './App';
 
 
