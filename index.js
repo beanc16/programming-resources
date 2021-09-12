@@ -2,6 +2,11 @@
  * REQUIRES *
  ************/
 
+// Read environment variables
+const dotenv = require('dotenv');
+dotenv.config();
+
+
 // Important variables
 const port = (process.env.PORT) ? process.env.PORT : 8000;
 
@@ -28,12 +33,12 @@ app.use(express.static(privateDir));
 
 // Get routes for MongoDB
 const resources = require("./external_routes/resources");
-const resourceTypes = require("./external_routes/types");
-const resourceAuthors = require("./external_routes/authors");
+//const resourceTypes = require("./external_routes/types");
+//const resourceAuthors = require("./external_routes/authors");
 
 app.use("/resources", resources);
-app.use("/types", resourceTypes);
-app.use("/authors", resourceAuthors);
+//app.use("/types", resourceTypes);
+//app.use("/authors", resourceAuthors);
 
 
 
@@ -42,12 +47,6 @@ app.use("/authors", resourceAuthors);
 /********
  * GETS *
  ********/
-
-// Index
-app.get("/", function(req, res)
-{
-    res.redirect("*");
-});
 
 // Ping
 app.get("/ping", function(req, res)
@@ -60,6 +59,7 @@ app.get("/ping", function(req, res)
 // DEBUGGING
 app.get("/*", function(req, res)
 {
+    res.status(404);
     res.send("Invalid URL");
 });
 
