@@ -1,3 +1,20 @@
+# programming-resources
+
+The react front-end for programming-resources, hosted on GitHub Pages.
+
+Front-End Code (React):
+https://github.com/beanc16/programming-resources
+
+Back-End Code (Node.js & MongoDb):
+https://github.com/beanc16/programming-resources/tree/server
+
+Application:
+https://beanc16.github.io/programming-resources
+
+
+
+<!--
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +85,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+-->
