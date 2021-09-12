@@ -37,8 +37,8 @@ const resources = require("./external_routes/resources");
 //const resourceAuthors = require("./external_routes/authors");
 
 app.use("/resources", resources);
-//app.use("/types", resourceTypes);
-//app.use("/authors", resourceAuthors);
+app.use("/types", resourceTypes);
+app.use("/authors", resourceAuthors);
 
 
 

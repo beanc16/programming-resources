@@ -44,9 +44,9 @@ module.exports = (function()
     });
 
     // getResourceByTypeName
+    /*
     app.get("/type-names/:typeName", async function (req, res)
     {
-    		/*
 		ResourceController.getByName(req)
 			.then(function (mongoResults)
 			{
@@ -56,8 +56,8 @@ module.exports = (function()
 			{
 				res.send(mongoResultsErr);
 			});
-		*/
     });
+    */
 	
 	
 	

@@ -11,11 +11,6 @@ module.exports = (function()
     // Routing
     const express = require("express");
     const app = express();
-	
-	
-    // Mongo
-    //const connection = require("./mongo_connection");
-    //let MongoResults = require("./mongo_results");
 
 
     // Controllers
@@ -30,9 +25,9 @@ module.exports = (function()
      ********/
      
     // getAllTypes
+    /*
     app.get("/", function (req, res)
     {
-    		/*
 		TypeController.getAll(req)
 			.then(function (mongoResults)
 			{
@@ -42,8 +37,8 @@ module.exports = (function()
 			{
 				res.send(mongoResultsErr);
 			});
-		*/
     });
+    */
 	
 	
 	
