@@ -11,15 +11,10 @@ module.exports = (function()
     // Routing
     const express = require("express");
     const app = express();
-	
-	
-    // Mongo
-    //const connection = require("./mongo_connection");
-    //let MongoResults = require("./mongo_results");
 
 
     // Controllers
-    //const ResourceController = require("../private/js/resources/ResourceController");
+    const ResourceController = require("../private/js/controllers/ResourceController");
 
 
 
@@ -32,7 +27,6 @@ module.exports = (function()
     // getAllResources
     app.get("/", function (req, res)
     {
-    		/*
 		ResourceController.getAll(req)
 			.then(function (mongoResults)
 			{
@@ -40,9 +34,13 @@ module.exports = (function()
 			})
 			.catch(function (mongoResultsErr)
 			{
+				if (mongoResultsErr.status != null)
+				{
+					res.status(mongoResultsErr.status);
+				}
+				
 				res.send(mongoResultsErr);
 			});
-		*/
     });
 
     // getResourceByTypeName
