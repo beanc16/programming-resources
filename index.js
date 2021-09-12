@@ -33,8 +33,8 @@ app.use(express.static(privateDir));
 
 // Get routes for MongoDB
 const resources = require("./external_routes/resources");
-//const resourceTypes = require("./external_routes/types");
-//const resourceAuthors = require("./external_routes/authors");
+const resourceTypes = require("./external_routes/types");
+const resourceAuthors = require("./external_routes/authors");
 
 app.use("/resources", resources);
 app.use("/types", resourceTypes);
