@@ -1,6 +1,6 @@
 # programming-resources
 
-The node server for programming-resources, hosted on Heroku.
+The react front-end for programming-resources, hosted on GitHub Pages.
 
 Web Application:
 https://beanc16.github.io/programming-resources
