@@ -30,7 +30,7 @@ module.exports = (function()
 		ResourceController.getAll(req)
 			.then(function (mongoResults)
 			{
-				res.send(mongoResults);
+				res.json(mongoResults);
 			})
 			.catch(function (mongoResultsErr)
 			{
@@ -39,7 +39,7 @@ module.exports = (function()
 					res.status(mongoResultsErr.status);
 				}
 				
-				res.send(mongoResultsErr);
+				res.json(mongoResultsErr);
 			});
     });
 
