@@ -8,12 +8,24 @@ dotenv.config();
 
 
 // Important variables
-const port = (process.env.PORT) ? process.env.PORT : 8000;
+const constants = require("./private/js/enums/constants");
 
 
 // Routing
 const express = require("express");
 const app = express();
+
+
+// CORS
+const cors = require("cors");
+app.use(cors());
+
+
+// Swagger
+const swaggerUi = require("swagger-ui-express");
+const docs = require("./docs");
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(docs));
 
 
 // Allow working with paths
@@ -81,8 +93,7 @@ app.get("/*", function(req, res)
  * PORT *
  ********/
 
-app.listen(port, function ()
+app.listen(constants.port, function ()
 {
-  console.log("App listening on port " + port);
+  console.log("App listening on port " + constants.port);
 });
-
