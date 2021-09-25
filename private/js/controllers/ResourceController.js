@@ -27,11 +27,47 @@ class ResourceController
 	{
 		return new Promise(function (resolve, reject)
 		{
+			ResourceController._queryResources()
+				.then(function (mongoResults)
+				{
+					resolve(mongoResults);
+				})
+				.catch(function (errResults)
+				{
+					reject(errResults);
+				});
+		});
+	}
+
+	static async getByTypeName(typeName)
+	{
+		return new Promise(function (resolve, reject)
+		{
+			ResourceController._queryResources({
+				"type_name": typeName,
+			})
+				.then(function (mongoResults)
+				{
+					resolve(mongoResults);
+				})
+				.catch(function (errResults)
+				{
+					reject(errResults);
+				});
+		});
+	}
+
+
+
+	static async _queryResources(findParams = {})
+	{
+		return new Promise(function (resolve, reject)
+		{
 			connection.getCollection(collectionsEnum.Resources)
 				.then(async function (collection)
 				{
 					// Make query
-					const result = await collection.find({}).sort(sortOptions);
+					const result = await collection.find(findParams).sort(sortOptions);
 					const array = await result.toArray();
 					
 					// Done searching, close connection
@@ -51,8 +87,6 @@ class ResourceController
 				});
 		});
 	}
-	
-	
 	
 	static _getAsModels(array)
 	{
