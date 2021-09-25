@@ -62,8 +62,7 @@ module.exports = (function()
           
           res.json(mongoResultsErr);
         });
-      });
-    }
+    });
 	
 	
 	
