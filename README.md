@@ -2,14 +2,17 @@
 
 The react front-end for programming-resources, hosted on GitHub Pages.
 
+Web Application:
+https://beanc16.github.io/programming-resources
+
+API Documentation:
+https://programming-resources-server.herokuapp.com/api-docs
+
 Front-End Code (React):
 https://github.com/beanc16/programming-resources
 
 Back-End Code (Node.js & MongoDb):
 https://github.com/beanc16/programming-resources/tree/server
-
-Application:
-https://beanc16.github.io/programming-resources
 
 
 
