@@ -10,7 +10,7 @@ module.exports = {
                 type: "string",
             },
             "required": true,
-            "description": "Type name of resources to get"
+            "description": "Type name (string or substring) of resources to get"
         }],
         responses: {
             // response code

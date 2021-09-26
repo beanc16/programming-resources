@@ -39,7 +39,7 @@ class ResourceAuthorController
 		});
 	}
 
-	static async getByName(name)
+	static async getByAuthorName(name)
 	{
 		return new Promise(function (resolve, reject)
 		{

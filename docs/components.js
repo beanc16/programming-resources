@@ -7,7 +7,13 @@ module.exports = {
                 description: "Any text string",
             },
 
-            // Resources Array Model
+
+
+            /*
+             * ARRAYS
+             */
+
+            // Resources Array
             resourcesArray: {
                 type: "array",
                 description: "An array of resources",
@@ -16,7 +22,25 @@ module.exports = {
                 }
             },
 
-            // Full Resources Array Model
+            // Resource Authors Array
+            resourceAuthorsArray: {
+                type: "array",
+                description: "An array of resource authors",
+                items: {
+                    $ref: "#/components/schemas/ResourceAuthor",
+                }
+            },
+
+            // Resource Types Array
+            resourceTypesArray: {
+                type: "array",
+                description: "An array of resource types",
+                items: {
+                    $ref: "#/components/schemas/ResourceType",
+                }
+            },
+
+            // Full Resources Array
             fullResourcesArray: {
                 type: "array",
                 description: "An array of full resources",
@@ -24,6 +48,12 @@ module.exports = {
                     $ref: "#/components/schemas/FullResource",
                 }
             },
+
+
+            
+            /*
+             * MODELS
+             */
 
             // Resource Model
             Resource: {
@@ -166,6 +196,12 @@ module.exports = {
                     },
                 }
             },
+
+
+            
+            /*
+             * ERRORS
+             */
 
             // MongoError Model
             MongoError: {

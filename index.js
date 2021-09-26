@@ -50,8 +50,8 @@ const resourceAuthors = require("./external_routes/authors");
 const fullResources = require("./external_routes/fullResources");
 
 app.use("/resources", resources);
-app.use("/types", resourceTypes);
-app.use("/authors", resourceAuthors);
+app.use("/resource-types", resourceTypes);
+app.use("/resource-authors", resourceAuthors);
 app.use("/full-resources", fullResources);
 
 

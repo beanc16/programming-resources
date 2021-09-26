@@ -1,8 +1,8 @@
 module.exports = {
     get: {
-        tags: ["resources"],
-        description: "Query all resources with an author name that contains the given author name from the database",
-        operationId: "get-resources-by-author-name",
+        tags: ["resource-authors"],
+        description: "Query all resource authors with an author name that contains the given author name from the database",
+        operationId: "get-resource-authors-by-author-name",
         parameters: [{
             "in": "path",
             "name": "authorName",
@@ -10,17 +10,17 @@ module.exports = {
                 type: "string",
             },
             "required": true,
-            "description": "Resources made by author with the author name (string or substring) to get"
+            "description": "Name (string or substring) of resource authors to get"
         }],
         responses: {
             // response code
             200: {
-                description: "Successfully pulled all resources with the given author name from the database",
+                description: "Successfully pulled all resource authors with the given author name from the database",
                 content: {
                     // content-type
                     "application/json": {
                         schema: {
-                            $ref: "#/components/schemas/resourcesArray", // Schema model
+                            $ref: "#/components/schemas/resourceAuthorsArray", // Schema model
                         },
                     },
                 },

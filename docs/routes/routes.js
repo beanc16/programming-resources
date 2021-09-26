@@ -3,6 +3,8 @@ const allResources = require("./resources/all-resources");
 const resourceByName = require("./resources/resource-by-name");
 const resourceByTypeName = require("./resources/resource-by-type-name");
 const resourceByAuthorName = require("./resources/resource-by-author-name");
+const allResourceAuthors = require("./resourceAuthors/all-resource-authors");
+const resourceAuthorByName = require("./resourceAuthors/resource-author-by-name");
 const allFullResources = require("./fullResources/all-full-resources");
 const fullResourceByName = require("./fullResources/full-resource-by-name");
 const fullResourceByAuthorName = require("./fullResources/full-resource-by-author-name");
@@ -30,7 +32,12 @@ module.exports = {
         },
 
         // Resource Authors
-        //
+        "/resource-authors": {
+            ...allResourceAuthors,
+        },
+        "/resource-authors/names/{authorName}": {
+            ...resourceAuthorByName,
+        },
 
         // Resource Types
         //

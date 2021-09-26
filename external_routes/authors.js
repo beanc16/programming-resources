@@ -44,11 +44,11 @@ module.exports = (function()
     });
 
     // getAuthorByName
-    app.get("/names/:name", async function (req, res)
+    app.get("/names/:authorName", async function (req, res)
     {
-      const name = req.params.name;
+      const authorName = req.params.authorName;
 
-      ResourceAuthorController.getByName(name)
+      ResourceAuthorController.getByAuthorName(authorName)
         .then(function (mongoResults)
         {
           res.json(mongoResults);
