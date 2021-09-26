@@ -14,7 +14,7 @@ module.exports = (function()
 
 
     // Controllers
-    //const TypeController = require("../private/js/resources/TypeController");
+    const ResourceTypeController = require("../private/js/controllers/ResourceTypeController");
 
 
 
@@ -25,20 +25,44 @@ module.exports = (function()
      ********/
      
     // getAllTypes
-    /*
     app.get("/", function (req, res)
     {
-		TypeController.getAll(req)
-			.then(function (mongoResults)
-			{
-				res.send(mongoResults);
-			})
-			.catch(function (mongoResultsErr)
-			{
-				res.send(mongoResultsErr);
-			});
+      ResourceTypeController.getAll(req)
+        .then(function (mongoResults)
+        {
+          res.json(mongoResults);
+        })
+        .catch(function (mongoResultsErr)
+        {
+          if (mongoResultsErr.status != null)
+          {
+            res.status(mongoResultsErr.status);
+          }
+          
+          res.json(mongoResultsErr);
+        });
     });
-    */
+
+    // getTypesByName
+    app.get("/names/:typeName", async function (req, res)
+    {
+      const typeName = req.params.typeName;
+
+      ResourceTypeController.getByTypeName(typeName)
+        .then(function (mongoResults)
+        {
+          res.json(mongoResults);
+        })
+        .catch(function (mongoResultsErr)
+        {
+          if (mongoResultsErr.status != null)
+          {
+            res.status(mongoResultsErr.status);
+          }
+          
+          res.json(mongoResultsErr);
+        });
+    });
 	
 	
 	
