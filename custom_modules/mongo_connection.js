@@ -52,20 +52,18 @@ module.exports = (function()
     	async getCollection(collectionName, dbName)
     	{
     		return new Promise((resolve, reject) =>
-    		{
-			let collection;
-			
-			this.run(function (db, client)
-			{
-				collection = db.collection(collectionName);
-				resolve(collection);
-			}, dbName)
-			
-			.catch(function (err)
-			{
-				reject(err);
+    		{				
+				this.run(function (db, client)
+				{
+					const collection = db.collection(collectionName);
+					resolve(collection);
+				}, dbName)
+				
+				.catch(function (err)
+				{
+					reject(err);
+				});
 			});
-		});
     	}
     	
     	async close()
@@ -73,14 +71,14 @@ module.exports = (function()
     		return new Promise(async (resolve, reject) =>
     		{
     			this.client.close()
-    				.then(function ()
+					.then(function ()
     				{
     					resolve();
-				})
-				.catch(function (err)
-				{
-					reject(err);
-				});
+					})
+					.catch(function (err)
+					{
+						reject(err);
+					});
     		});
     	}
     }
