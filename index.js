@@ -52,7 +52,7 @@ const fullResources = require("./external_routes/fullResources");
 app.use("/resources", resources);
 app.use("/types", resourceTypes);
 app.use("/authors", resourceAuthors);
-app.use("/fullResources", fullResources);
+app.use("/full-resources", fullResources);
 
 
 
