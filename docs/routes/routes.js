@@ -1,13 +1,27 @@
 const ping = require("./miscellaneous/ping");
-const getAllResources = require("./resources/get-all-resources");
+const allResources = require("./resources/all-resources");
+const resourceByName = require("./resources/resource-by-name");
+const resourceByTypeName = require("./resources/resource-by-type-name");
+const resourceByAuthorName = require("./resources/resource-by-author-name");
 
 module.exports = {
     paths: {
         "/ping": {
             ...ping,
         },
+
+        // Resources
         "/resources": {
-            ...getAllResources,
-        }
+            ...allResources,
+        },
+        "/resources/names/{name}": {
+            ...resourceByName,
+        },
+        "/resources/types/{typeName}": {
+            ...resourceByTypeName,
+        },
+        "/resources/authors/{authorName}": {
+            ...resourceByAuthorName,
+        },
     }
 }

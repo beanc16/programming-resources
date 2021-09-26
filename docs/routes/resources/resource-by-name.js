@@ -1,13 +1,13 @@
 module.exports = {
     get: {
         tags: ["resources"],
-        description: "Query all resources from the database",
-        operationId: "getAllResources",
+        description: "Query all resources with a name that contains the given name from the database",
+        operationId: "getResourcesByName",
         parameters: [],
         responses: {
             // response code
             200: {
-                description: "Successfully pulled all resources from the database",
+                description: "Successfully pulled all resources with the given name from the database",
                 content: {
                     // content-type
                     "application/json": {
@@ -31,5 +31,5 @@ module.exports = {
                 },
             },
         },
-      },
+    },
 }
