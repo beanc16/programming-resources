@@ -8,7 +8,7 @@ dotenv.config();
 
 
 // Important variables
-const constants = require("./private/js/enums/constants");
+const serverInfo = require("./private/js/enums/serverInfoEnum");
 
 
 // Routing
@@ -101,7 +101,7 @@ app.get("/*", function(req, res)
  * PORT *
  ********/
 
-app.listen(constants.port, function ()
+app.listen(serverInfo.port, function ()
 {
-  console.log("App listening on port " + constants.port);
+  console.log("App listening on port " + serverInfo.port);
 });

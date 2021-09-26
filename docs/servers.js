@@ -1,13 +1,13 @@
-const constants = require("../private/js/enums/constants");
+const serverInfo = require("../private/js/enums/serverInfoEnum");
 
 module.exports = {
     servers: [
         {
-            url: "http://localhost:" + constants.devPort,
+            url: serverInfo.devUrl,
             description: "Local server"
         },
         {
-            url: "https://programming-resources-server.herokuapp.com",
+            url: serverInfo.prodUrl,
             description: "Live server"
         }
     ]
