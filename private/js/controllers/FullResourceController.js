@@ -43,7 +43,7 @@ Array.prototype.clone = function()
 
 
 // Models
-const Resource = require("../models/Resource");
+const FullResource = require("../models/FullResource");
 
 
 
@@ -196,9 +196,6 @@ class FullResourceController
 	
 	static _getAsModels(array)
 	{
-		// Return array until FullResource model is made
-		return array;
-		/*
 		const models = [];
 		
 		for (let i = 0; i < array.length; i++)
@@ -208,14 +205,11 @@ class FullResourceController
 		}
 		
 		return models;
-		*/
 	}
 	
 	static _getAsModel(document)
 	{
-		// Return document until FullResource model is made
-		return document;
-		//return new Resource(document);
+		return new FullResource(document);
 	}
 }
 

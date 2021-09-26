@@ -19,7 +19,7 @@ class FullResource
 		this.author = new ResourceAuthor(document.author);
 
 		// Type
-		this.type = new ResourceAuthor(document.type);
+		this.type = new ResourceType(document.type);
 	}
 }
 
