@@ -12,7 +12,7 @@ module.exports = {
                     // content-type
                     "application/json": {
                         schema: {
-                            $ref: "#/components/schemas/resourceArray", // Schema model
+                            $ref: "#/components/schemas/resourcesArray", // Schema model
                         },
                     },
                 },
