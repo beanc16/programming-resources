@@ -8,16 +8,25 @@ module.exports = {
             },
 
             // Resources Array Model
-            resourceArray: {
+            resourcesArray: {
                 type: "array",
                 description: "An array of resources",
                 items: {
-                    $ref: "#/components/schemas/resource",
+                    $ref: "#/components/schemas/Resource",
+                }
+            },
+
+            // Full Resources Array Model
+            fullResourcesArray: {
+                type: "array",
+                description: "An array of full resources",
+                items: {
+                    $ref: "#/components/schemas/FullResource",
                 }
             },
 
             // Resource Model
-            resource: {
+            Resource: {
                 type: "object",
                 properties: {
                     _id: {
@@ -30,17 +39,17 @@ module.exports = {
                         description: "The name of the resource",
                         example: "Design Patterns Tutorial",
                     },
-                    type_name: {
+                    typeName: {
                         type: "string",
                         description: "The type of resource",
                         example: "concept.designPattern",
                     },
-                    type_order: {
+                    typeOrder: {
                         type: "integer",
                         description: "The order that the resource should be in relative to other resources of the same type_name",
                         example: 1,
                     },
-                    author_name: {
+                    authorName: {
                         type: "string",
                         description: "The name of the person/group/organization that created the resource",
                         example: "Tutorialspoint",
@@ -54,7 +63,7 @@ module.exports = {
             },
 
             // Resource Author Model
-            resource_author: {
+            ResourceAuthor: {
                 type: "object",
                 properties: {
                     _id: {
@@ -99,7 +108,7 @@ module.exports = {
             },
 
             // Resource Type Model
-            resource_type: {
+            ResourceType: {
                 type: "object",
                 properties: {
                     _id: {
@@ -116,6 +125,49 @@ module.exports = {
                         type: "string",
                         description: "test",
                         example: "test",
+                    },
+                }
+            },
+
+            // Full Resource Model
+            FullResource: {
+                type: "object",
+                properties: {
+                    _id: {
+                        type: "string",
+                        description: "The resource's ObjectId",
+                        example: 'ObjectId("1234567890abcdefghijklmn")',
+                    },
+                    name: {
+                        type: "string",
+                        description: "The name of the resource",
+                        example: "Design Patterns Tutorial",
+                    },
+                    typeName: {
+                        type: "string",
+                        description: "The type of resource",
+                        example: "concept.designPattern",
+                    },
+                    typeOrder: {
+                        type: "integer",
+                        description: "The order that the resource should be in relative to other resources of the same type_name",
+                        example: 1,
+                    },
+                    authorName: {
+                        type: "string",
+                        description: "The name of the person/group/organization that created the resource",
+                        example: "Tutorialspoint",
+                    },
+                    url: {
+                        type: "string",
+                        description: "The link that the resource can be found at",
+                        example: "https://www.tutorialspoint.com/design_pattern/index.htm",
+                    },
+                    author: {
+                        $ref: "#/components/schemas/Author"
+                    },
+                    resourceType: {
+                        $ref: "#/components/schemas/ResourceType"
                     },
                 }
             },
