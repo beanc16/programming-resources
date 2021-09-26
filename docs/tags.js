@@ -10,6 +10,9 @@ module.exports = {
             name: "resource types"
         },
         {
+            name: "full resources"
+        },
+        {
             name: "miscellaneous"
         },
     ]
