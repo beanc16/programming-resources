@@ -1,9 +1,17 @@
 module.exports = {
     get: {
-        tags: ["full resources"],
+        tags: ["full-resources"],
         description: "Query all full resources with an author name that contains the given author name from the database",
-        operationId: "getFullResourcesByAuthorName",
-        parameters: [],
+        operationId: "get-full-resources-by-author-name",
+        parameters: [{
+            "in": "path",
+            "name": "authorName",
+            "schema": {
+                type: "string",
+            },
+            "required": true,
+            "description": "Full resources made by author with the author name to get"
+        }],
         responses: {
             // response code
             200: {

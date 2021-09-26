@@ -3,7 +3,15 @@ module.exports = {
         tags: ["resources"],
         description: "Query all resources with a name that contains the given name from the database",
         operationId: "getResourcesByName",
-        parameters: [],
+        parameters: [{
+            "in": "path",
+            "name": "name",
+            "schema": {
+                type: "string",
+            },
+            "required": true,
+            "description": "Name of resources to get"
+        }],
         responses: {
             // response code
             200: {

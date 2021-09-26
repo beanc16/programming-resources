@@ -3,7 +3,15 @@ module.exports = {
         tags: ["resources"],
         description: "Query all resources with an author name that contains the given author name from the database",
         operationId: "getResourcesByAuthorName",
-        parameters: [],
+        parameters: [{
+            "in": "path",
+            "name": "authorName",
+            "schema": {
+                type: "string",
+            },
+            "required": true,
+            "description": "Resources made by author with the author name to get"
+        }],
         responses: {
             // response code
             200: {

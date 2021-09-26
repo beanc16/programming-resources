@@ -1,8 +1,8 @@
 module.exports = {
     get: {
-        tags: ["full resources"],
+        tags: ["full-resources"],
         description: "Query all full resources from the database",
-        operationId: "getAllFullResources",
+        operationId: "get-all-full-resources",
         parameters: [],
         responses: {
             // response code

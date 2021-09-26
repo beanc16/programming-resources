@@ -1,9 +1,17 @@
 module.exports = {
     get: {
-        tags: ["full resources"],
+        tags: ["full-resources"],
         description: "Query all full resources with a type name that contains the given type name from the database",
-        operationId: "getFullResourcesByTypeName",
-        parameters: [],
+        operationId: "get-full-resources-by-type-name",
+        parameters: [{
+            "in": "path",
+            "name": "typeName",
+            "schema": {
+                type: "string",
+            },
+            "required": true,
+            "description": "Type name of full resources to get"
+        }],
         responses: {
             // response code
             200: {

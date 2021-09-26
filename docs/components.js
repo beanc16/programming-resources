@@ -32,7 +32,7 @@ module.exports = {
                     _id: {
                         type: "string",
                         description: "The resource's ObjectId",
-                        example: 'ObjectId("1234567890abcdefghijklmn")',
+                        example: "1234567890abcdefghijklmn",
                     },
                     name: {
                         type: "string",
@@ -69,38 +69,38 @@ module.exports = {
                     _id: {
                         type: "string",
                         description: "The resource author's ObjectId",
-                        example: 'ObjectId("1234567890abcdefghijklmn")',
+                        example: "1234567890abcdefghijklmn",
                     },
-                    author_name: {
+                    authorName: {
                         type: "string",
                         description: "The name of a person/group/organization that created one or more resources",
                         example: "Tutorialspoint",
                     },
-                    author_youtube: {
+                    authorYoutube: {
                         type: "string",
                         description: "The URL of the author's YouTube channel",
                     },
-                    author_website: {
+                    authorWebsite: {
                         type: "string",
                         description: "The URL of the author's Website",
                     },
-                    author_twitter: {
+                    authorTwitter: {
                         type: "string",
                         description: "The URL of the author's Twitter profile",
                     },
-                    author_instagram: {
+                    authorInstagram: {
                         type: "string",
                         description: "The URL of the author's Instagram profile",
                     },
-                    author_facebook: {
+                    authorFacebook: {
                         type: "string",
                         description: "The URL of the author's Facebook profile",
                     },
-                    author_linkedin: {
+                    authorLinkedIn: {
                         type: "string",
                         description: "The URL of the author's LinkedIn profile",
                     },
-                    author_github: {
+                    authorGithub: {
                         type: "string",
                         description: "The URL of the author's GitHub profile",
                     },
@@ -114,17 +114,12 @@ module.exports = {
                     _id: {
                         type: "string",
                         description: "The resource type's ObjectId",
-                        example: 'ObjectId("1234567890abcdefghijklmn")',
+                        example: "1234567890abcdefghijklmn",
                     },
-                    type_name: {
+                    typeName: {
                         type: "string",
                         description: "The type of one or more resources",
                         example: "concept.designPattern",
-                    },
-                    test: {
-                        type: "string",
-                        description: "test",
-                        example: "test",
                     },
                 }
             },
@@ -136,7 +131,7 @@ module.exports = {
                     _id: {
                         type: "string",
                         description: "The resource's ObjectId",
-                        example: 'ObjectId("1234567890abcdefghijklmn")',
+                        example: "1234567890abcdefghijklmn",
                     },
                     name: {
                         type: "string",
@@ -164,9 +159,9 @@ module.exports = {
                         example: "https://www.tutorialspoint.com/design_pattern/index.htm",
                     },
                     author: {
-                        $ref: "#/components/schemas/Author"
+                        $ref: "#/components/schemas/ResourceAuthor"
                     },
-                    resourceType: {
+                    type: {
                         $ref: "#/components/schemas/ResourceType"
                     },
                 }

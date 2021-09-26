@@ -4,13 +4,13 @@ module.exports = {
             name: "resources"
         },
         {
-            name: "resource authors"
+            name: "resource-authors"
         },
         {
-            name: "resource types"
+            name: "resource-types"
         },
         {
-            name: "full resources"
+            name: "full-resources"
         },
         {
             name: "miscellaneous"
