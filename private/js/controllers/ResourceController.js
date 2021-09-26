@@ -45,7 +45,8 @@ class ResourceController
 		{
 			ResourceController._queryResources({
 				"name": {
-					$regex: name
+					$regex: name,
+					$options : "i",	// Case insensitive search
 				},
 			})
 				.then(function (mongoResults)
@@ -65,7 +66,8 @@ class ResourceController
 		{
 			ResourceController._queryResources({
 				"type_name": {
-					$regex: typeName
+					$regex: typeName,
+					$options : "i",	// Case insensitive search
 				},
 			})
 				.then(function (mongoResults)
@@ -85,7 +87,8 @@ class ResourceController
 		{
 			ResourceController._queryResources({
 				"author_name": {
-					$regex: authorName
+					$regex: authorName,
+					$options : "i",	// Case insensitive search
 				},
 			})
 				.then(function (mongoResults)
