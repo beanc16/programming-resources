@@ -7,7 +7,7 @@ module.exports = {
             description: "Local server"
         },
         {
-            url: "https://programming-resources-server.herokuapp.com:" + constants.livePort,
+            url: "https://programming-resources-server.herokuapp.com",
             description: "Live server"
         }
     ]
