@@ -140,13 +140,13 @@ class FullResourceController
 				{
 					const tempAggregateOptions = aggregateArrayOptions.clone();
 					// Add aggregate options if they were given
-					if (aggregateArrayOptionObjs.length > 0)
+					if (tempAggregateOptions.length > 0)
 					{
-						for (const optionObj in aggregateArrayOptionObjs)
+						for (const i in aggregateArrayOptionObjs)
 						{
-							if (typeof optionObj === "object")
+							if (typeof aggregateArrayOptionObjs[i] === "object")
 							{
-								tempAggregateOptions.push(optionObj);
+								tempAggregateOptions.push(aggregateArrayOptionObjs[i]);
 							}
 						}
 					}
