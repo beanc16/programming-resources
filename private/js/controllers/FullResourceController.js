@@ -10,6 +10,36 @@ const collectionsEnum = require("../enums/collectionsEnum");
 
 // Options
 const sortOptions = require("../enums/sortOptionsEnums").resourceSortOptions;
+const aggregateArrayOptions = [
+	{
+		// Join resources with resource authors
+		"$lookup": {
+			"from": "resources.authors",
+			"localField": "author_name",
+			"foreignField": "author_name",
+			"as": "author",
+		}
+	},
+	{
+		// Join resources with resource types
+		"$lookup": {
+			"from": "resources.types",
+			"localField": "type_name",
+			"foreignField": "type_name",
+			"as": "type",
+		}
+	},
+	{
+		// Sort the results with the given options
+		"$sort": sortOptions,
+	},
+];
+
+// Add function to clone any array
+Array.prototype.clone = function()
+{
+	return JSON.parse(JSON.stringify(this));
+};
 
 
 // Models
@@ -17,7 +47,7 @@ const Resource = require("../models/Resource");
 
 
 
-class ResourceController
+class FullResourceController
 {
 	/* 
 	 * GETS
@@ -27,7 +57,7 @@ class ResourceController
 	{
 		return new Promise(function (resolve, reject)
 		{
-			ResourceController._queryResources()
+			FullResourceController._queryResources()
 				.then(function (mongoResults)
 				{
 					resolve(mongoResults);
@@ -43,10 +73,9 @@ class ResourceController
 	{
 		return new Promise(function (resolve, reject)
 		{
-			ResourceController._queryResources({
-				"name": {
-					$regex: name,
-					$options : "i",	// Case insensitive search
+			FullResourceController._queryResources({
+				"$match": {
+					"name": name,
 				},
 			})
 				.then(function (mongoResults)
@@ -64,10 +93,9 @@ class ResourceController
 	{
 		return new Promise(function (resolve, reject)
 		{
-			ResourceController._queryResources({
-				"type_name": {
-					$regex: typeName,
-					$options : "i",	// Case insensitive search
+			FullResourceController._queryResources({
+				"$match": {
+					"type_name": typeName,
 				},
 			})
 				.then(function (mongoResults)
@@ -85,10 +113,9 @@ class ResourceController
 	{
 		return new Promise(function (resolve, reject)
 		{
-			ResourceController._queryResources({
-				"author_name": {
-					$regex: authorName,
-					$options : "i",	// Case insensitive search
+			FullResourceController._queryResources({
+				"$match": {
+					"author_name": authorName,
 				},
 			})
 				.then(function (mongoResults)
@@ -104,23 +131,36 @@ class ResourceController
 
 
 
-	static async _queryResources(findParams = {})
+	static async _queryResources(...aggregateArrayOptionObjs)
 	{
 		return new Promise(function (resolve, reject)
 		{
 			connection.getCollection(collectionsEnum.Resources)
 				.then(async function (collection)
 				{
+					let tempAggregateOptions;
+					// Add aggregate options if they were given
+					if (aggregateArrayOptionObjs.length > 0)
+					{
+						tempAggregateOptions = aggregateArrayOptions.clone();
+						for (const optionObj in aggregateArrayOptionObjs)
+						{
+							if (typeof optionObj === "object")
+							{
+								tempAggregateOptions.push(optionObj);
+							}
+						}
+					}
+
 					// Make query
-					const result = await collection.find(findParams)
-												   .sort(sortOptions);
+					const result = await collection.aggregate(tempAggregateOptions);
 					const array = await result.toArray();
 					
 					// Done searching, close connection
 					await connection.close();
 					
 					// Parse array into an array of models
-					const models = ResourceController._getAsModels(array);
+					const models = FullResourceController._getAsModels(array);
 					
 					// Initialize results
 					const mongoResults = new MongoResults(models, null);
@@ -136,23 +176,29 @@ class ResourceController
 	
 	static _getAsModels(array)
 	{
+		// Return array until FullResource model is made
+		return array;
+		/*
 		const models = [];
 		
 		for (let i = 0; i < array.length; i++)
 		{
-			const model = ResourceController._getAsModel(array[i]);
+			const model = FullResourceController._getAsModel(array[i]);
 			models.push(model);
 		}
 		
 		return models;
+		*/
 	}
 	
 	static _getAsModel(document)
 	{
-		return new Resource(document);
+		// Return document until FullResource model is made
+		return document;
+		//return new Resource(document);
 	}
 }
 
 
 
-export default ResourceController;
+export default FullResourceController;

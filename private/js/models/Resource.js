@@ -5,9 +5,9 @@ class Resource
 		this._id = document._id;
 		this.name = document.name;
 		this.description = document.description;
-		this.type_name = document.type_name;
-		this.type_order = document.type_order;
-		this.author_name = document.author_name;
+		this.typeName = document.type_name;
+		this.typeOrder = document.type_order;
+		this.authorName = document.author_name;
 		this.url = document.url;
 	}
 }
