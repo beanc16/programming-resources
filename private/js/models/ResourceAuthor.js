@@ -1,4 +1,4 @@
-class Author
+class ResourceAuthor
 {
 	constructor(document)
 	{
@@ -14,5 +14,5 @@ class Author
 	}
 }
 
-module.exports = Author;
+module.exports = ResourceAuthor;
 
