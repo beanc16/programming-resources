@@ -7,5 +7,7 @@ class ResourceType
 	}
 }
 
+
+
 module.exports = ResourceType;
 

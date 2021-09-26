@@ -14,5 +14,7 @@ class ResourceAuthor
 	}
 }
 
+
+
 module.exports = ResourceAuthor;
 
