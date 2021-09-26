@@ -44,7 +44,7 @@ module.exports = (function()
     });
 
     // getResourceByName
-    app.get("/name/:name", async function (req, res)
+    app.get("/names/:name", async function (req, res)
     {
       const name = req.params.name;
 
@@ -65,7 +65,7 @@ module.exports = (function()
     });
 
     // getResourceByTypeName
-    app.get("/type/:typeName", async function (req, res)
+    app.get("/types/:typeName", async function (req, res)
     {
       const typeName = req.params.typeName;
 
@@ -86,7 +86,7 @@ module.exports = (function()
     });
 
     // getResourceByAuthorName
-    app.get("/author/:authorName", async function (req, res)
+    app.get("/authors/:authorName", async function (req, res)
     {
       const authorName = req.params.authorName;
 
