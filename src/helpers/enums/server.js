@@ -4,10 +4,29 @@ Object.freeze(baseServerUrl);
 
 
 const routes = {
-    "ping": "/ping",
     "resources": {
         "all": "/resources",
+        "byName": "/resources/names/",
+        "byTypeName": "/resources/types/",
+        "byAuthorName": "/resources/authors/",
     },
+    "resourceAuthors": {
+        "all": "/resource-authors",
+        "byName": "/resource-authors/names/",
+    },
+    "resourceTypes": {
+        "all": "/resource-types",
+        "byName": "/resource-types/names/",
+    },
+    "fullResources": {
+        "all": "/full-resources",
+        "byName": "/full-resources/names/",
+        "byTypeName": "/full-resources/types/",
+        "byAuthorName": "/full-resources/authors/",
+    },
+    "miscellaneous": {
+        "ping": "/ping",
+    }
 };
 
 for (const key in routes)
