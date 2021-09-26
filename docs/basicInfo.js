@@ -3,7 +3,7 @@ module.exports = {
     info: {
       title: "Programming Resources API",
       description: "An API for a living document that will contain various free programming resources to assist with development or help developers learn.",
-      version: "0.4.1",
+      version: "0.5.0",
       contact: {
         name: "Chris Bean", // your name
         email: "bean.christopher@outlook.com", // your email

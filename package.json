@@ -1,6 +1,6 @@
 {
   "name": "programming-resources-server",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "The node server for programming-resources, hosted on Heroku",
   "main": "index.js",
   "scripts": {
