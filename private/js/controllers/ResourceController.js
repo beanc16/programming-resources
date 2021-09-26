@@ -39,12 +39,54 @@ class ResourceController
 		});
 	}
 
+	static async getByName(name)
+	{
+		return new Promise(function (resolve, reject)
+		{
+			ResourceController._queryResources({
+				"name": {
+					$regex: name
+				},
+			})
+				.then(function (mongoResults)
+				{
+					resolve(mongoResults);
+				})
+				.catch(function (errResults)
+				{
+					reject(errResults);
+				});
+		});
+	}
+
 	static async getByTypeName(typeName)
 	{
 		return new Promise(function (resolve, reject)
 		{
 			ResourceController._queryResources({
-				"type_name": typeName,
+				"type_name": {
+					$regex: typeName
+				},
+			})
+				.then(function (mongoResults)
+				{
+					resolve(mongoResults);
+				})
+				.catch(function (errResults)
+				{
+					reject(errResults);
+				});
+		});
+	}
+
+	static async getByAuthorName(authorName)
+	{
+		return new Promise(function (resolve, reject)
+		{
+			ResourceController._queryResources({
+				"author_name": {
+					$regex: authorName
+				},
 			})
 				.then(function (mongoResults)
 				{

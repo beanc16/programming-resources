@@ -43,12 +43,54 @@ module.exports = (function()
         });
     });
 
+    // getResourceByName
+    app.get("/name/:name", async function (req, res)
+    {
+      const name = req.params.name;
+
+      ResourceController.getByName(name)
+        .then(function (mongoResults)
+        {
+          res.json(mongoResults);
+        })
+        .catch(function (mongoResultsErr)
+        {
+          if (mongoResultsErr.status != null)
+          {
+            res.status(mongoResultsErr.status);
+          }
+          
+          res.json(mongoResultsErr);
+        });
+    });
+
     // getResourceByTypeName
-    app.get("/:typeName", async function (req, res)
+    app.get("/type/:typeName", async function (req, res)
     {
       const typeName = req.params.typeName;
 
       ResourceController.getByTypeName(typeName)
+        .then(function (mongoResults)
+        {
+          res.json(mongoResults);
+        })
+        .catch(function (mongoResultsErr)
+        {
+          if (mongoResultsErr.status != null)
+          {
+            res.status(mongoResultsErr.status);
+          }
+          
+          res.json(mongoResultsErr);
+        });
+    });
+
+    // getResourceByAuthorName
+    app.get("/author/:authorName", async function (req, res)
+    {
+      const authorName = req.params.authorName;
+
+      ResourceController.getByAuthorName(authorName)
         .then(function (mongoResults)
         {
           res.json(mongoResults);
