@@ -2,7 +2,7 @@ module.exports = {
     get: {
         tags: ["resources"],
         description: "Query all resources from the database",
-        operationId: "getAllResources",
+        operationId: "get-all-resources",
         parameters: [],
         responses: {
             // response code

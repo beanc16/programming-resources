@@ -2,7 +2,7 @@ module.exports = {
     get: {
         tags: ["resources"],
         description: "Query all resources with an author name that contains the given author name from the database",
-        operationId: "getResourcesByAuthorName",
+        operationId: "get-resources-by-author-name",
         parameters: [{
             "in": "path",
             "name": "authorName",
