@@ -62,6 +62,12 @@ app.use("/full-resources", fullResources);
  * GETS *
  ********/
 
+// Home
+app.get("/", function(req, res)
+{
+    res.redirect("/api-docs");
+});
+
 // Ping
 app.get("/ping", function(req, res)
 {
