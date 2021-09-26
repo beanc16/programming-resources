@@ -155,4 +155,4 @@ class ResourceController
 
 
 
-export default ResourceController;
+module.exports = ResourceController;

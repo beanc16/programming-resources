@@ -138,11 +138,10 @@ class FullResourceController
 			connection.getCollection(collectionsEnum.Resources)
 				.then(async function (collection)
 				{
-					let tempAggregateOptions;
+					const tempAggregateOptions = aggregateArrayOptions.clone();
 					// Add aggregate options if they were given
 					if (aggregateArrayOptionObjs.length > 0)
 					{
-						tempAggregateOptions = aggregateArrayOptions.clone();
 						for (const optionObj in aggregateArrayOptionObjs)
 						{
 							if (typeof optionObj === "object")
@@ -154,7 +153,8 @@ class FullResourceController
 
 					// Make query
 					const result = await collection.aggregate(tempAggregateOptions);
-					const array = await result.toArray();
+					let array = await result.toArray();
+					array = FullResourceController._parseResult(array);
 					
 					// Done searching, close connection
 					await connection.close();
@@ -172,6 +172,26 @@ class FullResourceController
 					reject(errResults);
 				});
 		});
+	}
+
+	static _parseResult(array)
+	{
+		array.map(function (curFullResource)
+		{
+			// Make author an object rather than an array
+			if (curFullResource.author.length == 1)
+			{
+				curFullResource.author = curFullResource.author[0];
+			}
+
+			// Make type an object rather than an array
+			if (curFullResource.type.length == 1)
+			{
+				curFullResource.type = curFullResource.type[0];
+			}
+		});
+
+		return array;
 	}
 	
 	static _getAsModels(array)
@@ -201,4 +221,4 @@ class FullResourceController
 
 
 
-export default FullResourceController;
+module.exports = FullResourceController;
