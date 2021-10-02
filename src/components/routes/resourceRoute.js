@@ -1,5 +1,14 @@
 import React from "react";
+
+// Helpers
 import data from "../../helpers/queries/dataStorageSingleton";
+import urlType from "../../helpers/enums/urlTypes";
+
+// Components
+import Article from "../resources/article";
+import Video from "../resources/video";
+import VideoLoading from "../resources/videoLoading";
+
 
 export default class ResourceRoute extends React.Component
 {
@@ -9,6 +18,7 @@ export default class ResourceRoute extends React.Component
         this.state = {
             "category": category,
             "subcategory": subcategory,
+            "resources": <VideoLoading />,
         };
     }
 
@@ -21,9 +31,8 @@ export default class ResourceRoute extends React.Component
                 .then(() =>
                 {
                     this.setState({
-                        "resources": data.getFullResourcesFor(this.state.category, 
-                                                              this.state.subcategory),
-                    }, () => console.log("this.state.resources 1:", this.state.resources));
+                        "resources": this._getResourcesAsComponents(),
+                    });
                 });
         }
 
@@ -31,9 +40,42 @@ export default class ResourceRoute extends React.Component
         else
         {
             this.setState({
-                "resources": data.getFullResourcesFor(this.state.category, 
-                                                      this.state.subcategory),
-            }, () => console.log("this.state.resources 2:", this.state.resources));
+                "resources": this._getResourcesAsComponents(),
+            });
         }
+    }
+
+    _getResourcesAsComponents()
+    {
+        const fullResources = data.getFullResourcesFor(this.state.category, 
+                                                       this.state.subcategory);
+        let resourceComponents = [];
+        let curResource;
+
+        for (let i = 0; i < fullResources.length; i++)
+        {
+            if (fullResources[i].urlType === urlType.ARTICLE)
+            {
+                curResource = <Article 
+                    name={fullResources[i].name}
+                    description={fullResources[i].description}
+                    authorName={fullResources[i].authorName}
+                    url={fullResources[i].url}
+                />;
+            }
+            else if (fullResources[i].urlType === urlType.VIDEO)
+            {
+                curResource = <Video 
+                    name={fullResources[i].name}
+                    description={fullResources[i].description}
+                    authorName={fullResources[i].authorName}
+                    url={fullResources[i].url}
+                />;
+            }
+
+            resourceComponents.push(curResource);
+        }
+
+        return resourceComponents;
     }
 }
