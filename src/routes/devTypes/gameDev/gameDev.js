@@ -1,37 +1,9 @@
-// Video
-import ReactPlayer from "react-player";
+import ResourceRoute from "../../../components/routes/resourceRoute";
 
-// Components
-import Video from "../../../components/resources/video";
-
-function GameDev()
+export default class GameDev extends ResourceRoute
 {
-    return(
-        <div id="dt-game-dev">
-            <div>
-                <h1>Game Development</h1>
-                <p>
-                    This will contain quick references and tutorials for 
-                    game development.
-                </p>
-            </div>
-            <div class="">
-                <div class="row d-flex justify-content-center">
-                    <Video 
-                        url="https://www.youtube.com/watch?v=B2Ut-LH8ai8" 
-                    />
-                    <Video 
-                        url="https://www.youtube.com/watch?v=B2Ut-LH8ai8" 
-                    />
-                    <Video 
-                        url="https://www.youtube.com/watch?v=B2Ut-LH8ai8" 
-                    />
-                </div>
-            </div>
-        </div>
-    );
+    constructor(props)
+    {
+        super(props, "devType", "gameDev");
+    }
 }
-
-
-
-export default GameDev;
