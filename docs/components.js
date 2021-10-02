@@ -89,6 +89,11 @@ module.exports = {
                         description: "The link that the resource can be found at",
                         example: "https://www.tutorialspoint.com/design_pattern/index.htm",
                     },
+                    urlType: {
+                        type: "string",
+                        description: "The type of resource found at the URL",
+                        example: "article",
+                    },
                 }
             },
 
@@ -187,6 +192,11 @@ module.exports = {
                         type: "string",
                         description: "The link that the resource can be found at",
                         example: "https://www.tutorialspoint.com/design_pattern/index.htm",
+                    },
+                    urlType: {
+                        type: "string",
+                        description: "The type of resource found at the URL",
+                        example: "article",
                     },
                     author: {
                         $ref: "#/components/schemas/ResourceAuthor"
