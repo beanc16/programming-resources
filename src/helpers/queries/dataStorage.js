@@ -7,14 +7,14 @@ class DataStorage
     constructor()
     {
         this._storage = {
-            "resources": []
+            "fullResources": {}
         };
         this.initializeStorage();
     }
 
     initializeStorage()
     {
-        axios.get(routes.resources.all)
+        axios.get(routes.fullResources.all)
             .then((results) =>
             {
                 const resources = results.data.results;
@@ -40,9 +40,9 @@ class DataStorage
         return this._storage;
     }
 
-    get resources()
+    get fullResources()
     {
-        return this._storage.resources;
+        return this._storage.fullResources;
     }
 
 
@@ -51,19 +51,28 @@ class DataStorage
      * Insert
      */
 
-    add(key, value)
+    push(key1, key2, key3, value)
     {
-        this._storage[key] = value;
-    }
+        // Initialize empty data if it doesn't exist yet
+        if (!this._storage[key1][key2])
+        {
+            this._storage[key1][key2] = {};
+        }
 
-    push(key, value)
-    {
-        this._storage[key].push(value);
+        if (!this._storage[key1][key2][key3])
+        {
+            this._storage[key1][key2][key3] = [];
+        }
+
+        // Push data to storage
+        this._storage[key1][key2][key3].push(value);
     }
 
     pushResource(value)
     {
-        this.push("resources", value);
+        // Type names come in formatted such as: "category.subcategory"
+        const keys = value.typeName.split(".");
+        this.push("fullResources", keys[0], keys[1], value);
     }
 }
 
