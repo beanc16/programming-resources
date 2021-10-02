@@ -2,7 +2,7 @@
 import ReactPlayer from "react-player";
 
 // Components
-import Video from "../../../components/video/video";
+import Video from "../../../components/resources/video";
 
 function GameDev()
 {
