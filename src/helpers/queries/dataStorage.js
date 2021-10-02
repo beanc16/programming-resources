@@ -9,24 +9,28 @@ class DataStorage
         this._storage = {
             "fullResources": {}
         };
-        this.initializeStorage();
     }
 
-    initializeStorage()
+    async initialize()
     {
-        axios.get(routes.fullResources.all)
-            .then((results) =>
-            {
-                const resources = results.data.results;
-                for (const i in resources)
+        return new Promise((resolve, reject) =>
+        {
+            axios.get(routes.fullResources.all)
+                .then((results) =>
                 {
-                    this.pushResource(resources[i]);
-                }
-            })
-            .catch(function (err)
-            {
-                console.log("err:", err);
-            });
+                    const resources = results.data.results;
+                    for (const i in resources)
+                    {
+                        this.pushResource(resources[i]);
+                    }
+                    resolve();
+                })
+                .catch(function (err)
+                {
+                    console.log("err:", err);
+                    reject();
+                });
+        });
     }
 
 
@@ -34,6 +38,17 @@ class DataStorage
     /*
      * GET
      */
+
+    get isInitialized()
+    {
+        const keys = Object.keys(this.fullResources);
+
+        if (keys.length > 0)
+        {
+            return true;
+        }
+        return false;
+    }
 
     get data()
     {
@@ -43,6 +58,16 @@ class DataStorage
     get fullResources()
     {
         return this._storage.fullResources;
+    }
+
+    getFullResourcesFor(category, subcategory)
+    {
+        if (!this._storage.fullResources[category])
+        {
+            return null;
+        }
+
+        return this._storage.fullResources[category][subcategory];
     }
 
 
