@@ -84,7 +84,7 @@ export default class ResourceRoute extends React.Component
     render()
     {
         return(
-            <div id={"pl-" + this.state.subcategory}>
+            <div id={`${this.state.category.toHtmlId()}-${this.state.subcategory.toHtmlId()}`}>
                 <h1>{this.state.subcategory.capitalize()}</h1>
                 {this.state.resources}
             </div>
@@ -100,4 +100,21 @@ export default class ResourceRoute extends React.Component
 String.prototype.capitalize = function()
 {
     return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
+/**
+ * Get any string as an html id such that: 
+ * "lowercaseSeperatedByHyphens".toHtmlId()
+ * = "lowercase-seperated-by-hyphens"
+ */
+String.prototype.toHtmlId = function()
+{
+    // Split this string into an array on each capital letter
+    let array = this.split(/(?=[A-Z])/);
+
+    // Make each string lowercase
+    array = array.map((str) => str.toLowerCase());
+
+    // Return each string as one, with a hyphen between each
+    return array.join("-");
 }
