@@ -14,6 +14,7 @@ class FullResource
 		this.typeOrder = document.type_order;
 		this.authorName = document.author_name;
 		this.url = document.url;
+		this.urlType = document.url_type;
 		
 		// Author
 		this.author = new ResourceAuthor(document.author);

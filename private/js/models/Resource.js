@@ -9,6 +9,7 @@ class Resource
 		this.typeOrder = document.type_order;
 		this.authorName = document.author_name;
 		this.url = document.url;
+		this.urlType = document.url_type;
 	}
 }
 
