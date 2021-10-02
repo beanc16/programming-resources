@@ -1,14 +1,9 @@
-export default function DesignPatterns()
+import ResourceRoute from "../../../components/routes/resourceRoute";
+
+export default class DesignPatterns extends ResourceRoute
 {
-    return(
-        <div id="conc-design-patterns">
-            <div>
-                <h1>Design Patterns</h1>
-                <p>
-                    This will contain quick references and tutorials for 
-                    design patterns.
-                </p>
-            </div>
-        </div>
-    );
+    constructor(props)
+    {
+        super(props, "concept", "designPattern");
+    }
 }
