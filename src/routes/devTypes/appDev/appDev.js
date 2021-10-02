@@ -1,4 +1,4 @@
-function AppDev()
+export default function AppDev()
 {
     return(
         <div id="dt-app-dev">
@@ -12,7 +12,3 @@ function AppDev()
         </div>
     );
 }
-
-
-
-export default AppDev;

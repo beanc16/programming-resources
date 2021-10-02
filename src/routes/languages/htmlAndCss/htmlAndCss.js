@@ -1,4 +1,4 @@
-function HtmlAndCss()
+export default function HtmlAndCss()
 {
     return(
         <div id="pl-html-css">
@@ -12,7 +12,3 @@ function HtmlAndCss()
         </div>
     );
 }
-
-
-
-export default HtmlAndCss;

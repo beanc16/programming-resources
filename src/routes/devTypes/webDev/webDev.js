@@ -1,4 +1,4 @@
-function WebDev()
+export default function WebDev()
 {
     return(
         <div id="dt-web-dev">
@@ -12,7 +12,3 @@ function WebDev()
         </div>
     );
 }
-
-
-
-export default WebDev;

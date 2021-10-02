@@ -1,4 +1,4 @@
-function PLHome()
+export default function PLHome()
 {
     return(
         <div id="pl-home">
@@ -12,7 +12,3 @@ function PLHome()
         </div>
     );
 }
-
-
-
-export default PLHome;

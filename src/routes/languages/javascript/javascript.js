@@ -1,4 +1,4 @@
-function JavaScript()
+export default function JavaScript()
 {
     return(
         <div id="pl-javascript">
@@ -12,7 +12,3 @@ function JavaScript()
         </div>
     );
 }
-
-
-
-export default JavaScript;

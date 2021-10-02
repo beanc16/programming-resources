@@ -15,7 +15,7 @@ import Git from "./git/git";
 import { TabBar, TabBarItem } from "../../components/navigation/tabBar";
   
 
-function ProgrammingLanguages()
+export default function ProgrammingLanguages()
 {
     let match = useRouteMatch();
 
@@ -52,7 +52,3 @@ function ProgrammingLanguages()
         </div>
     );
 }
-
-
-
-export default ProgrammingLanguages;

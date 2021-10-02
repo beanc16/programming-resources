@@ -1,4 +1,4 @@
-function UniversalResources()
+export default function UniversalResources()
 {
     return(
         <div id="universal-resources">
@@ -15,7 +15,3 @@ function UniversalResources()
         </div>
     )
 }
-
-
-
-export default UniversalResources;

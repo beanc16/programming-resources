@@ -15,7 +15,7 @@ import WebDev from "./webDev/webDev";
 import { TabBar, TabBarItem } from "../../components/navigation/tabBar";
   
 
-function TypesOfDevelopment()
+export default function TypesOfDevelopment()
 {
     let match = useRouteMatch();
 
@@ -52,7 +52,3 @@ function TypesOfDevelopment()
         </div>
     );
 }
-
-
-
-export default TypesOfDevelopment;

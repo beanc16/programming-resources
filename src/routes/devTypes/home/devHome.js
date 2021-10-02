@@ -1,4 +1,4 @@
-function DevHome()
+export default function DevHome()
 {
     return(
         <div id="dev-home">
@@ -12,7 +12,3 @@ function DevHome()
         </div>
     );
 }
-
-
-
-export default DevHome;

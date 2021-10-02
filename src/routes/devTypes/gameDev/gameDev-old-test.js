@@ -1,7 +1,7 @@
 // Components
 import Video from "../../../components/resources/video";
 
-function GameDev()
+export default function GameDev()
 {
     return(
         <div id="dt-game-dev">
@@ -28,7 +28,3 @@ function GameDev()
         </div>
     );
 }
-
-
-
-export default GameDev;

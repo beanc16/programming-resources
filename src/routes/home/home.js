@@ -1,6 +1,6 @@
 import data from "../../helpers/queries/dataStorageSingleton";
 
-function Home()
+export default function Home()
 {
     console.log("data:", data);
 
@@ -15,7 +15,3 @@ function Home()
         </div>
     )
 }
-
-
-
-export default Home;
