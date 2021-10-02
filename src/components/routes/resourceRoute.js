@@ -78,4 +78,26 @@ export default class ResourceRoute extends React.Component
 
         return resourceComponents;
     }
+
+
+
+    render()
+    {
+        return(
+            <div id={"pl-" + this.state.subcategory}>
+                <h1>{this.state.subcategory.capitalize()}</h1>
+                {this.state.resources}
+            </div>
+        );
+    }
+}
+
+
+
+
+
+// Get any string as itself with the first letter capitalized
+String.prototype.capitalize = function()
+{
+    return this.charAt(0).toUpperCase() + this.slice(1);
 }
