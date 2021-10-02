@@ -2,3 +2,7 @@ html, body, #root, #app {
     height: 100%;
     overflow: auto;
 }
+
+.article-description {
+    margin-bottom: 0;
+}
