@@ -9,6 +9,7 @@ import {
 import PLHome from "./home/plHome";
 import HtmlAndCss from "./htmlAndCss/htmlAndCss";
 import JavaScript from "./javascript/javascript";
+import Git from "./git/git";
 
 // Components
 import { TabBar, TabBarItem } from "../../components/navigation/tabBar";
@@ -30,6 +31,9 @@ function ProgrammingLanguages()
                 <TabBarItem to={`${match.url}/javascript`}>
                     JavaScript
                 </TabBarItem>
+                <TabBarItem to={`${match.url}/git`}>
+                    Git
+                </TabBarItem>
             </TabBar>
             <Switch>
                 <Route path={`${match.path}/html-css`}>
@@ -37,6 +41,9 @@ function ProgrammingLanguages()
                 </Route>
                 <Route path={`${match.path}/javascript`}>
                     <JavaScript />
+                </Route>
+                <Route path={`${match.path}/git`}>
+                    <Git />
                 </Route>
                 <Route path={`${match.path}`}>
                     <PLHome />
