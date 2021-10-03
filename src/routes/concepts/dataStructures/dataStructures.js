@@ -1,14 +1,9 @@
-export default function DataStructures()
+import ResourceRoute from "../../../components/routes/resourceRoute";
+
+export default class DataStructures extends ResourceRoute
 {
-    return(
-        <div id="conc-data-structures">
-            <div>
-                <h1>Data Structures</h1>
-                <p>
-                    This will contain quick references and tutorials for 
-                    data structures.
-                </p>
-            </div>
-        </div>
-    );
+    constructor(props)
+    {
+        super(props, "concept", "dataStructure");
+    }
 }
