@@ -8,6 +8,9 @@ export default class Video extends ReactPlayer
 {
 }
 
-Video.defaultProps.controls = "true";
-Video.defaultProps.class = "col-4 mb-4 mx-auto";
+
+
+// Default Property values
+Video.defaultProps.controls = true;
+Video.defaultProps.className = "col-xl-4 mb-4 mx-auto";
 Video.defaultProps.fallback = <VideoLoading />;
