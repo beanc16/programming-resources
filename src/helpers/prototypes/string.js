@@ -44,3 +44,8 @@ String.prototype.toHeader = function()
     // Return each string as one, with a space between each
     return array.join(" ");
 }
+
+
+
+// Hide console warning about not editing prototypes
+/*eslint no-extend-native: ["error", { "exceptions": ["String"] }]*/

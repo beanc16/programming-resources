@@ -5,3 +5,8 @@ Object.isObject = function(obj)
             !Array.isArray(obj) &&      // Is not an array
             obj !== null);              // Is not null
 }
+
+
+
+// Hide console warning about not editing prototypes
+/*eslint no-extend-native: ["error", { "exceptions": ["Object"] }]*/
