@@ -3,11 +3,14 @@ import React from "react";
 // Helpers
 import data from "../../helpers/queries/dataStorageSingleton";
 import urlType from "../../helpers/enums/urlTypes";
+import "../../helpers/prototypes/string";
+import "../../helpers/prototypes/object";
 
 // Components
 import Article from "../resources/article";
 import Video from "../resources/video";
 import VideoLoading from "../resources/videoLoading";
+import ResourceGroup from "../resources/resourceGroup";
 
 
 export default class ResourceRoute extends React.Component
@@ -50,8 +53,25 @@ export default class ResourceRoute extends React.Component
         const fullResources = data.getFullResourcesFor(this.state.category, 
                                                        this.state.subcategory);
         let resourceComponents = [];
-        let curResource;
+        
+        if (Array.isArray(fullResources))
+        {
+            resourceComponents = this._getResourcesComponentArray(fullResources);
+        }
 
+        else if (Object.isObject(fullResources))
+        {
+            resourceComponents = this._getResourcesObjectAsComponentArray(fullResources);
+        }
+
+        return resourceComponents;
+    }
+
+    _getResourcesComponentArray(fullResources)
+    {
+        let resourceComponents = [];
+        let curResource;
+        
         for (let i = 0; i < fullResources.length; i++)
         {
             if (fullResources[i].urlType === urlType.ARTICLE)
@@ -79,42 +99,43 @@ export default class ResourceRoute extends React.Component
         return resourceComponents;
     }
 
+    _getResourcesObjectAsComponentArray(fullResources)
+    {
+        let resourceComponents = [];
+        let curResource, curResourceGroup, value;
+
+        if (Object.isObject(fullResources))
+        {
+            for (const key in fullResources)
+            {
+                value = fullResources[key];
+                curResource = this._getResourcesObjectAsComponentArray(value);
+                curResourceGroup = <ResourceGroup groupName={key}>
+                    {curResource}
+                </ResourceGroup>
+
+                // Concat adds one resource or an array of resources to maintain one single array
+                resourceComponents.push(curResourceGroup);
+            }
+        }
+
+        if (Array.isArray(fullResources))
+        {
+            return this._getResourcesComponentArray(fullResources);
+        }
+
+        return resourceComponents;
+    }
+
 
 
     render()
     {
         return(
             <div id={`${this.state.category.toHtmlId()}-${this.state.subcategory.toHtmlId()}`}>
-                <h1>{this.state.subcategory.capitalize()}</h1>
+                <h1>{this.state.subcategory.toHeader()}</h1>
                 {this.state.resources}
             </div>
         );
     }
-}
-
-
-
-
-
-// Get any string as itself with the first letter capitalized
-String.prototype.capitalize = function()
-{
-    return this.charAt(0).toUpperCase() + this.slice(1);
-}
-
-/**
- * Get any string as an html id such that: 
- * "lowercaseSeperatedByHyphens".toHtmlId()
- * = "lowercase-seperated-by-hyphens"
- */
-String.prototype.toHtmlId = function()
-{
-    // Split this string into an array on each capital letter
-    let array = this.split(/(?=[A-Z])/);
-
-    // Make each string lowercase
-    array = array.map((str) => str.toLowerCase());
-
-    // Return each string as one, with a hyphen between each
-    return array.join("-");
 }

@@ -6,3 +6,8 @@ html, body, #root, #app {
 .article-description {
     margin-bottom: 0;
 }
+
+/* Add bottom spacing to all except the last */
+.resource-group {
+    margin-bottom: 3%;
+}
