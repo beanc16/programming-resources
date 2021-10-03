@@ -1,5 +1,3 @@
-import data from "../../helpers/queries/dataStorageSingleton";
-
 export default function Home()
 {
     return(
