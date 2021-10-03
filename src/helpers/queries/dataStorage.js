@@ -2,7 +2,7 @@ import axios from "axios";
 import routes from "../enums/server";
 
 
-class DataStorage
+export default class DataStorage
 {
     constructor()
     {
@@ -76,7 +76,7 @@ class DataStorage
      * Insert
      */
 
-    push(key1, key2, key3, value)
+    push(key1, key2, key3, key4, value)
     {
         // Initialize empty data if it doesn't exist yet
         if (!this._storage[key1][key2])
@@ -84,23 +84,37 @@ class DataStorage
             this._storage[key1][key2] = {};
         }
 
-        if (!this._storage[key1][key2][key3])
+        if (!this._storage[key1][key2][key3] && !key4)
         {
             this._storage[key1][key2][key3] = [];
         }
 
+        if (!this._storage[key1][key2][key3] && key4)
+        {
+            this._storage[key1][key2][key3] = {};
+            this._storage[key1][key2][key3][key4] = [];
+        }
+
+        if (key4 && !this._storage[key1][key2][key3][key4])
+        {
+            this._storage[key1][key2][key3][key4] = [];
+        }
+
         // Push data to storage
-        this._storage[key1][key2][key3].push(value);
+        if (!key4)
+        {
+            this._storage[key1][key2][key3].push(value);
+        }
+        else if (key4)
+        {
+            this._storage[key1][key2][key3][key4].push(value);
+        }
     }
 
     pushResource(value)
     {
         // Type names come in formatted such as: "category.subcategory"
         const keys = value.typeName.split(".");
-        this.push("fullResources", keys[0], keys[1], value);
+        this.push("fullResources", keys[0], keys[1], keys[2], value);
     }
 }
-
-
-
-export default DataStorage;
