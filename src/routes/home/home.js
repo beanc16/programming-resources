@@ -2,8 +2,6 @@ import data from "../../helpers/queries/dataStorageSingleton";
 
 export default function Home()
 {
-    console.log("data:", data);
-
     return(
         <div id="home">
             <h1>Home</h1>
