@@ -1,5 +1,6 @@
 const urlTypes = {
     ARTICLE: "article",
+    ASSET: "asset",
     VIDEO: "video",
 };
 

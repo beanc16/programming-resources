@@ -74,7 +74,8 @@ export default class ResourceRoute extends React.Component
         
         for (let i = 0; i < fullResources.length; i++)
         {
-            if (fullResources[i].urlType === urlType.ARTICLE)
+            if (fullResources[i].urlType === urlType.ARTICLE ||
+                fullResources[i].urlType === urlType.ASSET)
             {
                 curResource = <Article 
                     name={fullResources[i].name}
@@ -104,12 +105,14 @@ export default class ResourceRoute extends React.Component
         let resourceComponents = [];
         let curResource, curResourceGroup, value;
 
+        console.log("fullResources:", fullResources);
         if (Object.isObject(fullResources))
         {
             for (const key in fullResources)
             {
                 value = fullResources[key];
                 curResource = this._getResourcesObjectAsComponentArray(value);
+                console.log("curResource:", curResource);
                 curResourceGroup = <ResourceGroup groupName={key}>
                     {curResource}
                 </ResourceGroup>
