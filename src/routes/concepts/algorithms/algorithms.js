@@ -1,14 +1,9 @@
-export default function Algorithms()
+import ResourceRoute from "../../../components/routes/resourceRoute";
+
+export default class Algorithms extends ResourceRoute
 {
-    return(
-        <div id="conc-algorithms">
-            <div>
-                <h1>Algorithms</h1>
-                <p>
-                    This will contain quick references and tutorials for 
-                    algorithms.
-                </p>
-            </div>
-        </div>
-    );
+    constructor(props)
+    {
+        super(props, "concept", "algorithm");
+    }
 }
