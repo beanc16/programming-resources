@@ -1,12 +1,12 @@
-export default function WebDev()
+export default function GameDevHome()
 {
     return(
-        <div id="dt-web-dev">
+        <div id="dev-home">
             <div>
-                <h1>Web Development</h1>
+                <h1>Game Development</h1>
                 <p>
                     This will contain quick references and tutorials for 
-                    web development.
+                    game development.
                 </p>
             </div>
         </div>

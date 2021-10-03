@@ -1,9 +1,9 @@
 import ResourceRoute from "../../../components/routes/resourceRoute";
 
-export default class GameDev extends ResourceRoute
+export default class GameDesign extends ResourceRoute
 {
     constructor(props)
     {
-        super(props, "devType", "gameDev");
+        super(props, "gameDev", "gameDesign");
     }
 }

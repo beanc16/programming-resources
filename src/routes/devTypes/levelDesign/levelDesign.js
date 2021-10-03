@@ -1,12 +1,12 @@
-export default function DevHome()
+export default function LevelDesign()
 {
     return(
-        <div id="dev-home">
+        <div id="gd-level-design">
             <div>
-                <h1>Types of Development</h1>
+                <h1>Level Design</h1>
                 <p>
                     This will contain quick references and tutorials for 
-                    specific types of development.
+                    level design.
                 </p>
             </div>
         </div>

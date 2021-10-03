@@ -9,7 +9,7 @@ import Home from "./routes/home/home";
 import UniversalResources from "./routes/universalResources/universalResources";
 import ProgrammingLanguages from "./routes/languages/programmingLanguages";
 import ProgrammingConcepts from "./routes/concepts/programmingConcepts";
-import TypesOfDevelopment from "./routes/devTypes/typesOfDevelopment";
+import GameDev from "./routes/devTypes/gameDev";
 
 // Components
 import { TabBar, TabBarItem } from "./components/navigation/tabBar";
@@ -32,8 +32,8 @@ function App()
         <TabBarItem to="/concepts">
           Programming Concepts
         </TabBarItem>
-        <TabBarItem to="/dev-types">
-          Types of Development
+        <TabBarItem to="/game-dev">
+          Game Development
         </TabBarItem>
       </TabBar>
 
@@ -47,8 +47,8 @@ function App()
         <Route path="/concepts">
           <ProgrammingConcepts />
         </Route>
-        <Route path="/dev-types">
-          <TypesOfDevelopment />
+        <Route path="/game-dev">
+          <GameDev />
         </Route>
         <Route path="/">
           <Home />
