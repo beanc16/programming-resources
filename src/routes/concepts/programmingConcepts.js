@@ -11,6 +11,8 @@ import Algorithms from "./algorithms/algorithms";
 import Automata from "./automata/automata";
 import DataStructures from "./dataStructures/dataStructures";
 import DesignPatterns from "./designPatterns/designPatterns";
+import GraphTheory from "./graphTheory/graphTheory";
+import ObjectOrientedProgramming from "./objectOriented/objectOrientedProgramming";
 
 // Components
 import { TabBar, TabBarItem } from "../../components/navigation/tabBar";
@@ -38,6 +40,12 @@ export default function ProgrammingConcepts()
                 <TabBarItem to={`${match.url}/design-patterns`}>
                     Design Patterns
                 </TabBarItem>
+                <TabBarItem to={`${match.url}/graph-theory`}>
+                    Graph Theory
+                </TabBarItem>
+                <TabBarItem to={`${match.url}/object-oriented-programming`}>
+                    Object Oriented Programming
+                </TabBarItem>
             </TabBar>
             <Switch>
                 <Route path={`${match.path}/algorithms`}>
@@ -51,6 +59,12 @@ export default function ProgrammingConcepts()
                 </Route>
                 <Route path={`${match.path}/design-patterns`}>
                     <DesignPatterns />
+                </Route>
+                <Route path={`${match.path}/graph-theory`}>
+                    <GraphTheory />
+                </Route>
+                <Route path={`${match.path}/object-oriented-programming`}>
+                    <ObjectOrientedProgramming />
                 </Route>
                 <Route path={`${match.path}`}>
                     <ConceptsHome />

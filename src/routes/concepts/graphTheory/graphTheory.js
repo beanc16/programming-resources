@@ -1,9 +1,9 @@
 import ResourceRoute from "../../../components/routes/resourceRoute";
 
-export default class Automata extends ResourceRoute
+export default class GraphTheory extends ResourceRoute
 {
     constructor(props)
     {
-        super(props, "concept", "automata");
+        super(props, "concept", "graphTheory");
     }
 }
