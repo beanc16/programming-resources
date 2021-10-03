@@ -9,7 +9,7 @@ import {
 import URHome from "./home/urHome";
 import Fonts from "./fonts/fonts";
 import ColorPalettes from "./colorPalettes/colorPalettes";
-import RoyaltyFreeImages from "./royaltyFreeImages/royaltyFreeImages";
+import RoyaltyFree from "./royaltyFree/royaltyFree";
 
 // Components
 import { TabBar, TabBarItem } from "../../components/navigation/tabBar";
@@ -31,8 +31,8 @@ export default function UniversalResources()
                 <TabBarItem to={`${match.url}/fonts`}>
                     Fonts
                 </TabBarItem>
-                <TabBarItem to={`${match.url}/royalty-free-images`}>
-                    Royalty Free Images
+                <TabBarItem to={`${match.url}/royalty-free-assets`}>
+                    Royalty Free Assets
                 </TabBarItem>
             </TabBar>
             <Switch>
@@ -42,8 +42,8 @@ export default function UniversalResources()
                 <Route path={`${match.path}/fonts`}>
                     <Fonts />
                 </Route>
-                <Route path={`${match.path}/royalty-free-images`}>
-                    <RoyaltyFreeImages />
+                <Route path={`${match.path}/royalty-free-assets`}>
+                    <RoyaltyFree />
                 </Route>
                 <Route path={`${match.path}`}>
                     <URHome />
