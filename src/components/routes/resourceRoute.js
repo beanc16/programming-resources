@@ -105,14 +105,12 @@ export default class ResourceRoute extends React.Component
         let resourceComponents = [];
         let curResource, curResourceGroup, value;
 
-        console.log("fullResources:", fullResources);
         if (Object.isObject(fullResources))
         {
             for (const key in fullResources)
             {
                 value = fullResources[key];
                 curResource = this._getResourcesObjectAsComponentArray(value);
-                console.log("curResource:", curResource);
                 curResourceGroup = <ResourceGroup groupName={key}>
                     {curResource}
                 </ResourceGroup>
