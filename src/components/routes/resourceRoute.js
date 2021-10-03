@@ -78,6 +78,7 @@ export default class ResourceRoute extends React.Component
                 fullResources[i].urlType === urlType.ASSET)
             {
                 curResource = <Article 
+                    key={fullResources[i]._id} 
                     name={fullResources[i].name}
                     description={fullResources[i].description}
                     authorName={fullResources[i].authorName}
@@ -87,6 +88,7 @@ export default class ResourceRoute extends React.Component
             else if (fullResources[i].urlType === urlType.VIDEO)
             {
                 curResource = <Video 
+                    key={fullResources[i]._id} 
                     name={fullResources[i].name}
                     description={fullResources[i].description}
                     authorName={fullResources[i].authorName}
@@ -111,7 +113,7 @@ export default class ResourceRoute extends React.Component
             {
                 value = fullResources[key];
                 curResource = this._getResourcesObjectAsComponentArray(value);
-                curResourceGroup = <ResourceGroup groupName={key}>
+                curResourceGroup = <ResourceGroup groupName={key} key={key}>
                     {curResource}
                 </ResourceGroup>
 
