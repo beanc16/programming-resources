@@ -1,4 +1,4 @@
-const baseServerUrl = "https://programming-resources-server.herokuapp.com";
+const baseServerUrl = "https://programming-resources-microservice.vercel.app";
 Object.freeze(baseServerUrl);
 
 
