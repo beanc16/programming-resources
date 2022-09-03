@@ -1,18 +1,18 @@
 # programming-resources
 
-The react front-end for programming-resources, hosted on GitHub Pages.
+The react frontend for storing data about free resources that teach programming.
 
 Web Application:
 https://beanc16.github.io/programming-resources
 
-API Documentation:
-https://programming-resources-server.herokuapp.com/api-docs
-
 Front-End Code (React):
 https://github.com/beanc16/programming-resources
 
+API Documentation:
+https://programming-resources-microservice.vercel.app/api-docs
+
 Back-End Code (Node.js & MongoDb):
-https://github.com/beanc16/programming-resources/tree/server
+https://github.com/beanc16/programming-resources-microservice
 
 
 
